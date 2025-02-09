@@ -1,0 +1,28 @@
+name: Daily Commit - 23f300160@ds.study.iitm.ac.in
+
+on:
+  schedule:
+    # Runs daily at 4 PM IST (10:30 AM UTC)
+    - cron: '30 10 * * *'
+
+jobs:
+  daily-commit:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Checkout the repository
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      # Step 2: Make changes (e.g., update a timestamp file)
+      - name: Update Timestamp
+        run: echo "Last updated at $(date)" > last-updated.txt
+
+      # Step 3: Commit changes
+      - name: Commit Changes
+        run: |
+          git config --global user.name "GitHub Action"
+          git config --global user.email "23f300160@ds.study.iitm.ac.in"
+          git add .
+          git commit -m "Automated commit on $(date)"
+          git push
