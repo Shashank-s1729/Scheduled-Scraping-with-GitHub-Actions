@@ -1,4 +1,4 @@
-name: 23f3001601@ds.study.iitm.ac.in
+name: 23f300160@ds.study.iitm.ac.in
 
 on:
   workflow_dispatch:
@@ -34,4 +34,4 @@ jobs:
         env:
           PAT_TOKEN: ${{ secrets.PAT_TOKEN }}
         run: |
-          git push https://<username>:${{ secrets.PAT_TOKEN }}@github.com/<username>/<repository>.git
+          git push https://x-access-token:${{ secrets.PAT_TOKEN }}@github.com/Shashank-s1729/Scheduled-Scraping-with-GitHub-Actions.git HEAD:${{ github.ref_name }}
