@@ -1,6 +1,5 @@
 name: 23f3001601@ds.study.iitm.ac.in
 
-
 on:
   workflow_dispatch:
 
@@ -21,11 +20,11 @@ jobs:
       - name: Update Timestamp
         run: echo "Last updated at $(date)" > last-updated.txt
 
-      # Step 3: Commit changes
+      # Step 3: Commit changes with email included in the commit message
       - name: Commit Changes
         run: |
           git config --global user.name "GitHub Action"
-          git config --global user.email "23f300160@ds.study.iitm.ac.in"
+          git config --global user.email "23f3001601@ds.study.iitm.ac.in"
           git add .
-          git commit -m "Automated commit on $(date)"
+          git commit -m "Automated commit by 23f3001601@ds.study.iitm.ac.in on $(date)"
           git push
