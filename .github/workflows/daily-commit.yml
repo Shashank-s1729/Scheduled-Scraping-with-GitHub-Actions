@@ -22,7 +22,7 @@ jobs:
         run: echo "Last updated at $(date)" > last-updated.txt
 
       # Step 3: Commit changes (prevent failure for no changes)
-      - name: Commit Changes
+      - name: Commit Changes by 23f3001601@ds.study.iitm.ac.in
         run: |
           git config --global user.name "GitHub Action"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
